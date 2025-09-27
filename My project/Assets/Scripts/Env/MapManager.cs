@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MapManager : MonoBehaviour
+{
+    public GameObject tile;
+    GameObject[,] map = new GameObject[15,15];
+    // Start is called before the first frame update
+    void Start()
+    {
+        for (int i = 0; i < 15; i++)
+        {
+            for (int j = 0; j < 15; j++)
+            {
+                map[i, j] = GameObject.Instantiate
+                    (tile, new Vector3(i, 0, j), Quaternion.identity, gameObject.transform);
+            }
+        }
+    }
+}
